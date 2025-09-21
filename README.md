@@ -2,6 +2,20 @@
 This is a  ROS bridge for the robot simulator [Stage](https://github.com/rtv/Stage).
 It supports multiple robots with one or multiple tf-trees.
 
+## Install
+```
+mkdir -p stage_ws/src
+cd src
+git clone git@github.com:tuw-robotics/Stage.git
+git clone git@github.com:tuw-robotics/stage_ros2.git
+rosdep update
+rosdep install --from-paths ./Stage --ignore-src -r -y  # install dependencies for Stage
+rosdep install --from-paths ./stage_ros2 --ignore-src -r -y  # install dependencies for stage_ros2
+cd YOUR_ROS2_WORKSPACE
+colcon build --symlink-install 
+```
+
+
 * [install](res/install.md)
 * [run demos](res/demos.md)
 * [handling multiple vehickes](res/multi_robot_setup.md)
