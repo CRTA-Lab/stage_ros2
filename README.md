@@ -5,7 +5,7 @@ It supports multiple robots with one or multiple tf-trees.
 ## Install
 ```
 mkdir -p stage_ws/src
-cd src
+cd stage_ws/src
 git clone https://github.com/CRTA-Lab/Stage.git
 git clone https://github.com/CRTA-Lab/stage_ros2.git
 rosdep update
