@@ -6,8 +6,8 @@ It supports multiple robots with one or multiple tf-trees.
 ```
 mkdir -p stage_ws/src
 cd src
-git clone git@github.com:tuw-robotics/Stage.git
-git clone git@github.com:tuw-robotics/stage_ros2.git
+git clone https://github.com/CRTA-Lab/Stage.git
+git clone https://github.com/CRTA-Lab/stage_ros2.git
 rosdep update
 rosdep install --from-paths ./Stage --ignore-src -r -y  # install dependencies for Stage
 rosdep install --from-paths ./stage_ros2 --ignore-src -r -y  # install dependencies for stage_ros2
