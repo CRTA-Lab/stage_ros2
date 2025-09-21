@@ -2,7 +2,7 @@
 This is a ROS2 bridge for the robot simulator [Stage](https://github.com/rtv/Stage).
 It supports multiple robots with one or multiple tf-trees.
 
-* [install](res/install.md)
+* [Install](res/install.md)
 * [run demos](res/demos.md)
 * [handling multiple vehickes](res/multi_robot_setup.md)
 
