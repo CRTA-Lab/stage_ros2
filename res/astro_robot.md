@@ -111,10 +111,15 @@ Once the initial pose is set, drive the robot briefly and AMCL particles will co
 Once localization is running, launch the nav2 navigation stack:
 
 ```bash
-ros2 launch stage_ros2 demo.launch.py world:=crta_mapa rviz:=false
-ros2 launch astro rsp.launch.py
-ros2 launch astro_slam astro_stage_localization.launch.py
-ros2 launch astro_slam astro_stage_navigation.launch.py
+ros2 launch astro_navigation astro_stage_navigation.launch.py
 ```
 
+> **Note:** To control navigation from RViz, add the Navigation 2 panel via **Panels → Add New Panel → Nav2 Panel** and click **OK**. This panel lets you set waypoints and start navigation directly from the UI.
+
+> **Note:** To visualize the costmap, planned path, and other navigation data, add the relevant displays in RViz via **Add → By topic** — look for topics such as `/global_costmap/costmap`, `/local_costmap/costmap`, `/plan`, and `/particle_cloud`.
+
 Use the **2D Goal Pose** tool in RViz to set a navigation goal for the robot.
+
+<div align="center">
+<img src="stage_slam_astro/navigation.png" alt="nav2 navigation running in RViz" width="800px"/>
+</div>
