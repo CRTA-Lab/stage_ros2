@@ -48,24 +48,28 @@ ros2 launch astro_slam astro_stage_mapping.launch.py
 
 This starts `slam_toolbox` in mapping mode alongside RViz with the mapping configuration.
 
+<div align="center">
+<img src="stage_slam_astro/mapping.png" alt="slam_toolbox mapping in RViz" width="800px"/>
+</div>
+
 ### 3. Drive the robot
 
-Use a joystick or keyboard teleop to drive the robot around the environment:
+Use keyboard teleop to drive the robot around the environment:
 
 ```bash
-# Joystick (Logitech F710)
-ros2 launch stage_ros2 f710.launch.py namespace:='/'
-
-# Keyboard
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/cmd_vel
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
 Drive the robot until the full environment is mapped in RViz.
 
 ### 4. Save the map
 
-Once satisfied with the map, save it:
+Once satisfied with the map, you can save it in two ways:
 
+**Option A — RViz GUI:**
+In the slam_toolbox panel on the left side of RViz, type the desired map name into the field next to **Save Map** and click the button. The map files will be saved to the current working directory.
+
+**Option B — Terminal:**
 ```bash
 ros2 run nav2_map_server map_saver_cli -f ~/stage_ws/src/ASTRO/astro_slam/maps/<map_name>
 ```
@@ -89,3 +93,13 @@ ros2 launch astro_slam astro_stage_localization.launch.py map:=/path/to/your_map
 ```
 
 Use the **2D Pose Estimate** tool in RViz to set the robot's initial position on the map.
+
+<div align="center">
+<img src="stage_slam_astro/initial_pose.png" alt="Setting initial pose estimate in RViz" width="800px"/>
+</div>
+
+Once the initial pose is set, drive the robot briefly and AMCL particles will converge to the correct position.
+
+<div align="center">
+<img src="stage_slam_astro/driving_slam_converge.png" alt="AMCL particles converging after driving" width="800px"/>
+</div>
