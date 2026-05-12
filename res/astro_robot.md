@@ -103,3 +103,18 @@ Once the initial pose is set, drive the robot briefly and AMCL particles will co
 <div align="center">
 <img src="stage_slam_astro/driving_slam_converge.png" alt="AMCL particles converging after driving" width="800px"/>
 </div>
+
+---
+
+## Navigation
+
+Once localization is running, launch the nav2 navigation stack:
+
+```bash
+ros2 launch stage_ros2 demo.launch.py world:=crta_mapa rviz:=false
+ros2 launch astro rsp.launch.py
+ros2 launch astro_slam astro_stage_localization.launch.py
+ros2 launch astro_slam astro_stage_navigation.launch.py
+```
+
+Use the **2D Goal Pose** tool in RViz to set a navigation goal for the robot.
