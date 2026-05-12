@@ -3,8 +3,9 @@ This is a ROS2 bridge for the robot simulator [Stage](https://github.com/rtv/Sta
 It supports multiple robots with one or multiple tf-trees.
 
 * [Install](res/install.md)
-* [run demos](res/demos.md)
-* [handling multiple vehickes](res/multi_robot_setup.md)
+* [Run demos](res/demos.md)
+* [Handling multiple vehicles](res/multi_robot_setup.md)
+* [Astro robot](res/astro_robot.md)
 
 ## Stamped velocity Support (TwistStamped)
 This stage ROS2 bridge can be configured to use stamped velocities on the topic __cmd_vel__.
